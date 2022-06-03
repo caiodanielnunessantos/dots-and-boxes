@@ -13,9 +13,8 @@ There's lots of things to do. I don't even know exactly what to do next. But I'l
 * Convert workarounds in correctly written and well reasoned lines of code
 * Add a CLI interface to change game settings, which are hardcoded now
 * Decouple game and graphics implementations, without having to do workarounds
-* Choose a license
 * Find more things to do
 
 ## License
 
-I didn't set up a license yet. It will be free and permissive.
+Licensed under the MIT license.
