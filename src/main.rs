@@ -3,20 +3,19 @@ mod app;
 mod colors;
 
 use app::Player;
-use sdl2::{pixels::Color};
 
 pub fn main() {
     let mut application = app::App::new(
         (1200, 700),
         50,
-        colors::LightGray,
-        colors::Black,
+        colors::LIGHT_GRAY,
+        colors::BLACK,
         (10, 8),
-        colors::Black,
+        colors::BLACK,
         &[
-            Player { initial: 'C', color: Color::GREEN},
-            Player { initial: 'M', color: Color::BLUE},
-            Player { initial: 'Y', color: colors::LightPink}
+            Player { initial: 'C', color: colors::GREEN},
+            Player { initial: 'M', color: colors::BLUE},
+            Player { initial: 'Y', color: colors::LIGHT_PINK}
         ],
     );
     application.init();
