@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+#![allow(non_upper_case_globals)]
+
 use sdl2::pixels::Color;
 
 pub const AliceBlue: Color = Color::RGB(240, 248, 255);
