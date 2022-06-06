@@ -25,6 +25,7 @@ pub struct App {
     board_size: (i32, i32),
     hover: Option<Line>,
     hover_color: Color,
+    elapsed_frames: usize,
 }
 
 impl App {
@@ -48,6 +49,7 @@ impl App {
             board_size,
             hover: None,
             hover_color,
+            elapsed_frames: 0,
         }
     }
     pub fn init(&mut self) {
@@ -88,6 +90,7 @@ impl App {
             }
 
             self.draw(&mut canvas);
+            self.elapsed_frames += 1;
 
             if let Some(remaining_time) =
                 (Duration::from_nanos(1_000_000_000) / 75).checked_sub(now.elapsed())
@@ -137,7 +140,7 @@ impl App {
             )
         };
 
-        canvas.set_draw_color(self.hover_color);
+        canvas.set_draw_color(if self.elapsed_frames % 10 > 5 { self.hover_color } else { self.players[self.state.next_player as usize - 1].0 });
         if let Some(hover) = &self.hover {
             canvas.fill_rect(rect_line(hover)).unwrap();
         };

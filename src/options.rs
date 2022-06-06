@@ -74,7 +74,11 @@ pub fn get_options() {
                                 !character.is_ascii_lowercase()
                             });
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
-                                if end == el.0.to_ascii_lowercase() { Some(el.1) }
+                                let mut color = el.0.to_ascii_lowercase();
+                                color.remove_matches(|character: char| {
+                                    !character.is_ascii_lowercase()
+                                });
+                                if end == color { Some(el.1) }
                                 else { None }
                             }) {
                                 background_color = color;
@@ -85,7 +89,11 @@ pub fn get_options() {
                                 !character.is_ascii_lowercase()
                             });
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
-                                if end == el.0.to_ascii_lowercase() { Some(el.1) }
+                                let mut color = el.0.to_ascii_lowercase();
+                                color.remove_matches(|character: char| {
+                                    !character.is_ascii_lowercase()
+                                });
+                                if end == color { Some(el.1) }
                                 else { None }
                             }) {
                                 dot_color = color;
@@ -96,7 +104,11 @@ pub fn get_options() {
                                 !character.is_ascii_lowercase()
                             });
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
-                                if end == el.0.to_ascii_lowercase() { Some(el.1) }
+                                let mut color = el.0.to_ascii_lowercase();
+                                color.remove_matches(|character: char| {
+                                    !character.is_ascii_lowercase()
+                                });
+                                if end == color { Some(el.1) }
                                 else { None }
                             }) {
                                 hover_color = color;
@@ -107,7 +119,11 @@ pub fn get_options() {
                                 !character.is_ascii_lowercase()
                             });
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
-                                if end == el.0.to_ascii_lowercase() { Some(el.1) }
+                                let mut color = el.0.to_ascii_lowercase();
+                                color.remove_matches(|character: char| {
+                                    !character.is_ascii_lowercase()
+                                });
+                                if end == color { Some(el.1) }
                                 else { None }
                             }) {
                                 custom_players.push(crate::app::Player(color));
