@@ -7,10 +7,7 @@ use sdl2::{
 };
 
 #[derive(Clone, Copy, Debug)]
-pub struct Player {
-    pub initial: char,
-    pub color: Color,
-}
+pub struct Player( pub Color);
 
 #[derive(Debug)]
 pub enum Line {
@@ -151,7 +148,7 @@ impl App {
             if *square != 0 {
                 let x = number as i32 % self.board_size.0;
                 let y = number as i32 / self.board_size.0;
-                canvas.set_draw_color(self.players[*square as usize - 1].color);
+                canvas.set_draw_color(self.players[*square as usize - 1].0);
                 canvas.fill_rect(draw_square(x, y)).unwrap();
             }
         }
@@ -160,7 +157,7 @@ impl App {
             if *line != 0 {
                 let x = number as i32 % self.board_size.0;
                 let y = number as i32 / self.board_size.0;
-                canvas.set_draw_color(self.players[*line as usize - 1].color);
+                canvas.set_draw_color(self.players[*line as usize - 1].0);
                 canvas.fill_rect(rect_line(&Line::Horizontal(x, y))).unwrap();
             }
         }
@@ -169,7 +166,7 @@ impl App {
             if *line != 0 {
                 let x = number as i32 % (self.board_size.0 + 1);
                 let y = number as i32 / (self.board_size.0 + 1);
-                canvas.set_draw_color(self.players[*line as usize - 1].color);
+                canvas.set_draw_color(self.players[*line as usize - 1].0);
                 canvas.fill_rect(rect_line(&Line::Vertical(x, y))).unwrap();
             }
         }

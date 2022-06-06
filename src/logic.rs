@@ -61,7 +61,7 @@ impl DotsAndBoxesState {
                     if y < self.height
                         && self.horizontal_lines[h(x, y + 1)] != 0
                         && self.vertical_lines[v(x, y)] != 0
-                        && self.vertical_lines[v(x, y)] != 0
+                        && self.vertical_lines[v(x + 1, y)] != 0
                     {
                         play_again = true;
                         self.squares[s(x, y)] = self.next_player;
