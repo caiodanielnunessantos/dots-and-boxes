@@ -13,11 +13,12 @@ pub fn get_options() {
     let mut background_color = colors::LIGHT_GRAY;
     let mut dot_color = colors::BLACK;
     let mut board_size = (10, 8);
-    let mut hover_color = colors::BLACK;
+    let mut hover_color = colors::WHITE;
     let players = [Player(colors::LIME_GREEN), Player(colors::BLUE), Player(colors::RED)];
     let mut custom_players = Vec::new();
 
     if let Ok(mut file) = File::open(DEFAULT_CONFIG_FILE) {
+        println!("Lendo configuração");
         let mut buf = String::new();
         file.read_to_string(&mut buf).unwrap();
 
@@ -29,13 +30,13 @@ pub fn get_options() {
                         start.to_lowercase(),
                         end.trim().to_lowercase()
                     );
-                    start.remove_matches(|character: char| {
-                        !character.is_ascii_lowercase()
-                    });
+                    start = start.chars().into_iter().filter(|character| {
+                        character.is_ascii_lowercase()
+                    }).collect();
                     match &*start {
                         "windowsize" => {
                             let numbers: Vec<i32> = end.split(|character: char| {
-                                !character.is_ascii_digit()
+                                character.is_ascii_digit()
                             }).filter_map(|part: &str| {
                                 if let Ok(val) = i32::from_str_radix(part, 10) {
                                     Some(val)
@@ -47,7 +48,7 @@ pub fn get_options() {
                         },
                         "linesize" => {
                             let numbers: Vec<i32> = end.split(|character: char| {
-                                !character.is_ascii_digit()
+                                character.is_ascii_digit()
                             }).filter_map(|part: &str| {
                                 if let Ok(val) = i32::from_str_radix(part, 10) {
                                     Some(val)
@@ -59,7 +60,7 @@ pub fn get_options() {
                         },
                         "boardsize" => {
                             let numbers: Vec<i32> = end.split(|character: char| {
-                                !character.is_ascii_digit()
+                                character.is_ascii_digit()
                             }).filter_map(|part: &str| {
                                 if let Ok(val) = i32::from_str_radix(part, 10) {
                                     Some(val)
@@ -70,14 +71,14 @@ pub fn get_options() {
                             }
                         },
                         "backgroundcolor" => {
-                            end.remove_matches(|character: char| {
-                                !character.is_ascii_lowercase()
-                            });
+                            end = end.chars().into_iter().filter(|character| {
+                                character.is_ascii_lowercase()
+                            }).collect();
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
-                                color.remove_matches(|character: char| {
-                                    !character.is_ascii_lowercase()
-                                });
+                                color = color.chars().into_iter().filter(|character| {
+                                    character.is_ascii_lowercase()
+                                }).collect();
                                 if end == color { Some(el.1) }
                                 else { None }
                             }) {
@@ -85,14 +86,14 @@ pub fn get_options() {
                             };
                         },
                         "dotcolor" => {
-                            end.remove_matches(|character: char| {
-                                !character.is_ascii_lowercase()
-                            });
+                            end = end.chars().into_iter().filter(|character| {
+                                character.is_ascii_lowercase()
+                            }).collect();
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
-                                color.remove_matches(|character: char| {
-                                    !character.is_ascii_lowercase()
-                                });
+                                color = color.chars().into_iter().filter(|character| {
+                                    character.is_ascii_lowercase()
+                                }).collect();
                                 if end == color { Some(el.1) }
                                 else { None }
                             }) {
@@ -100,14 +101,14 @@ pub fn get_options() {
                             };
                         },
                         "hovercolor" => {
-                            end.remove_matches(|character: char| {
-                                !character.is_ascii_lowercase()
-                            });
+                            end = end.chars().into_iter().filter(|character| {
+                                character.is_ascii_lowercase()
+                            }).collect();
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
-                                color.remove_matches(|character: char| {
-                                    !character.is_ascii_lowercase()
-                                });
+                                color = color.chars().into_iter().filter(|character| {
+                                    character.is_ascii_lowercase()
+                                }).collect();
                                 if end == color { Some(el.1) }
                                 else { None }
                             }) {
@@ -115,14 +116,14 @@ pub fn get_options() {
                             };
                         },
                         "playercolor" => {
-                            end.remove_matches(|character: char| {
-                                !character.is_ascii_lowercase()
-                            });
+                            end = end.chars().into_iter().filter(|character| {
+                                character.is_ascii_lowercase()
+                            }).collect();
                             if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
-                                color.remove_matches(|character: char| {
-                                    !character.is_ascii_lowercase()
-                                });
+                                color = color.chars().into_iter().filter(|character| {
+                                    character.is_ascii_lowercase()
+                                }).collect();
                                 if end == color { Some(el.1) }
                                 else { None }
                             }) {

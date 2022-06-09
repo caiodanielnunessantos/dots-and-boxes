@@ -40,13 +40,13 @@ impl DotsAndBoxesState {
             squares: squares.into_boxed_slice(),
         }
     }
-    pub fn play_line(&mut self, line: Line) {
+    pub fn play_line(&mut self, line: Option<Line>) {
         let s = |x: i32, y: i32| (y * self.width + x) as usize;
         let h = |x: i32, y: i32| (y * self.width + x) as usize;
         let v = |x: i32, y: i32| (y * (self.width + 1) + x) as usize;
 
         match line {
-            Line::Horizontal(x, y) => {
+            Some(Line::Horizontal(x, y)) => {
                 if self.horizontal_lines[h(x, y)] == 0 {
                     self.horizontal_lines[h(x, y)] = self.next_player;
                     let mut play_again = false;
@@ -75,7 +75,7 @@ impl DotsAndBoxesState {
                     }
                 }
             },
-            Line::Vertical(x, y) => {
+            Some(Line::Vertical(x, y)) => {
                 if self.vertical_lines[v(x, y)] == 0 {
                     self.vertical_lines[v(x, y)] = self.next_player;
                     let mut play_again = false;
@@ -103,7 +103,8 @@ impl DotsAndBoxesState {
                         }
                     }
                 }
-            }
+            },
+            None => ()
         }
     }
     pub fn print_to_terminal(&self) {

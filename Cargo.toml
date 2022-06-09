@@ -15,5 +15,3 @@ repository = "https://github.com/caiodanielnunessantos/dots-and-boxes"
 
 [dependencies.sdl2]
 version = "0.35"
-default-features = false
-features = ["static-link","bundled"]

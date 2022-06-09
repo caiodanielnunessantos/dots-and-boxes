@@ -83,7 +83,7 @@ impl App {
                         self.hover = self.pos_to_line((x, y));
                     },
                     Event::MouseButtonDown { x, y, .. } => {
-                        self.state.play_line(self.pos_to_line((x, y)).unwrap_or(Line::Horizontal(0, 0)))
+                        self.state.play_line(self.pos_to_line((x, y)))
                     }
                     _ => {}
                 }
