@@ -74,7 +74,7 @@ pub fn get_options() {
                             end = end.chars().into_iter().filter(|character| {
                                 character.is_ascii_lowercase()
                             }).collect();
-                            if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
+                            if let Some(color) = COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
                                 color = color.chars().into_iter().filter(|character| {
                                     character.is_ascii_lowercase()
@@ -89,7 +89,7 @@ pub fn get_options() {
                             end = end.chars().into_iter().filter(|character| {
                                 character.is_ascii_lowercase()
                             }).collect();
-                            if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
+                            if let Some(color) = COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
                                 color = color.chars().into_iter().filter(|character| {
                                     character.is_ascii_lowercase()
@@ -104,7 +104,7 @@ pub fn get_options() {
                             end = end.chars().into_iter().filter(|character| {
                                 character.is_ascii_lowercase()
                             }).collect();
-                            if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
+                            if let Some(color) = COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
                                 color = color.chars().into_iter().filter(|character| {
                                     character.is_ascii_lowercase()
@@ -119,7 +119,7 @@ pub fn get_options() {
                             end = end.chars().into_iter().filter(|character| {
                                 character.is_ascii_lowercase()
                             }).collect();
-                            if let Some(color) = colors::COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
+                            if let Some(color) = COLOR_NAMES.into_iter().find_map(|el: &(&str, sdl2::pixels::Color)| {
                                 let mut color = el.0.to_ascii_lowercase();
                                 color = color.chars().into_iter().filter(|character| {
                                     character.is_ascii_lowercase()
