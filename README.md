@@ -1,5 +1,10 @@
 # dots-and-boxes
 
+I consent to the transfer of this crate to the first person who asks help@crates.io for it.
+
+Contact me at caio dot daniel dot nunes dot santos at gmail dot com if you
+need to. You can do it if you just want to talk as well.
+
 ## THIS IS AN ABANDONED PROJECT
 
 Hi, everyone, I am the writer of this crate. I would like to say that I am
