@@ -1,20 +1,24 @@
 # dots-and-boxes
 
-This piece of software aims to be a very simple, but correct, implementation of Dots and Boxes, a simple paper-and-pencil game.
+## THIS IS AN ABANDONED PROJECT
 
-I did it using [The Rust Programming Language](https://www.rust-lang.org/),
-[SDL2 library](https://www.libsdl.org/) and [rust-sdl2](https://github.com/Rust-SDL2/rust-sdl2),
-which implements safe bindings of SDL2.
+Hi, everyone, I am the writer of this crate. I would like to say that I am
+going to transfer the ownership of the name "dots-and-boxes" to any person
+who is able and willing to take care of it better than I am able to.
 
-## TODO
+I am not a programmer and this project was done in just one day in my teenage
+years. I was just excited to find out why Rust is so much loved and decided to
+try to create something simple using it. Now I understand it and I
+really love it too. Big thanks to everyone who contributed to it.
 
-There's lots of things to do. I don't even know exactly what to do next. But I'll try.
+The name "dots-and-boxes" is very simple and generic and I think a much better
+project deserves it. So much better that I am not the right person to create
+it. I am sure that a real programmer could do something much better than I am
+capable of in a short amount of time. So I am transferring the ownership of it.
 
-* Convert workarounds in correctly written and well reasoned lines of code
-* Add a CLI interface to change game settings, which are hardcoded now
-* Decouple game and graphics implementations, without having to do workarounds
-* Find more things to do
+Big thanks to [GitHub](https://github.com) for hosting this project and big
+thanks to [crates.io](https://crates.io/) for making it easily available to everyone
+using cargo-cli and
+[`cargo-install`](https://doc.rust-lang.org/cargo/commands/cargo-install.html)
+command.
 
-## License
-
-Licensed under the MIT license.
