@@ -1,7 +1,7 @@
 [package]
 name = "dots-and-boxes"
 authors = ["Caio Santos <caio.daniel.nunes.santos@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 edition = "2021"
 homepage = "https://github.com/caiodanielnunessantos/dots-and-boxes"
