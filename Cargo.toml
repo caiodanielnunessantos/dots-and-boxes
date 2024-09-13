@@ -7,7 +7,7 @@ edition = "2021"
 homepage = "https://github.com/caiodanielnunessantos/dots-and-boxes"
 readme = "README.md"
 # description = "Dots and Boxes classic pen and paper game implemented in sdl2-rust"
-descriptsion = "I consent to the transfer of this crate to the first person who asks help@crates.io for it."
+description = "I consent to the transfer of this crate to the first person who asks help@crates.io for it."
 repository = "https://github.com/caiodanielnunessantos/dots-and-boxes"
 
 [dependencies]
